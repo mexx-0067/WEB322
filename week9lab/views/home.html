@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML FORMS</h1>
+    <form method="post" action="/submit">
+        <lable for="username">Username:</lable>
+        <input id="username" name="username" type="text" placeholder="Your username"/>
+
+        <br></br>
+
+        <lable>Pick your college:</lable>
+        <select name="colleges" id="colleges">
+            <option value="college1" selected disabled>College</option>
+            <option value="college2">Seneca</option>
+            <option value="college3">George Brown</option>
+        </select>
+        <br></br>
+        <label for ="textarea">Tell us about yourself:</label>
+        <textarea id="textarea" name="textarea"></textarea>
+
+        <br></br>
+
+        <input type="checkbox" id="subscribe" name="checkbox" value="check"/>
+        <label for ="checkbox">Checkbox</label>
+
+        <br></br>
+
+        <fieldset>
+            <legend>How often do you want to get emails?</legend>
+            <div>
+                <input type="radio" id="daily" name="email_frequency" value="daily"/>
+                <label for="daily">Everyday</label>
+            </div>
+            <div>
+                <input type="radio" id="weekly" name="email_frequency" value="weekly"/>
+                <label for="weekly">Once a week</label>
+            </div>
+            <div>
+                <input type="radio" id="never" name="email_frequency" value="never"/>
+                <label for="never">Never</label>
+            </div>
+        </fieldset>
+
+        <br></br><br></br>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>

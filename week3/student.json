@@ -1,0 +1,8 @@
+{
+    "fName": "Mehroj",
+    "lName": "Tursunov",
+    "age": 18,
+    "program":"CPP",
+    "courses": ["DB", "WEB322", "OOP"],
+    
+}

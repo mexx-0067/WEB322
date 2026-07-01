@@ -1,0 +1,17 @@
+{
+  "name": "week5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --watch server.js",
+    "build-css": "sass --no-source-map --watch scss:public/css"
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sass": "^1.93.2"
+  }
+}

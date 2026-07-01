@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mehroj Tursunov</title>
+</head>
+<body>
+  <h1><%= message %></h1>
+
+  <h2>Students</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>GPA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (students && students.length) { %>
+        <% students.forEach(function(s) { %>
+          <tr>
+            <td><%= s.name %></td>
+            <td><%= s.age %></td>
+            <td><%= s.gpa %></td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="3">No students available.</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+  
+  <!-- GPA summary table: perfect (gpa == 4) and low (gpa <= 3.5) -->
+  <% const perfect = (students || []).filter(s => Number(s.gpa) === 4); %>
+  <% const low = (students || []).filter(s => Number(s.gpa) <= 3.5); %>
+
+  <h2>GPA Summary</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Names</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>GPA = 4</td>
+        <td>
+          <% if (perfect.length) { %>
+            <%= perfect.map(p => p.name).join(', ') %>
+          <% } else { %>
+            (none)
+          <% } %>
+        </td>
+      </tr>
+      <tr>
+        <td>GPA &lt;= 3.5</td>
+        <td>
+          <% if (low.length) { %>
+            <%= low.map(p => p.name).join(', ') %>
+          <% } else { %>
+            (none)
+          <% } %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
